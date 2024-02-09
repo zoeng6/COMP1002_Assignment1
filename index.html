@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>Pizza Online Order </title>
+        <link rel="stylesheet" href="styles.css" type="text/css" />
+
+	</head>
+	<body>
+        
+        <header>
+            <h1>PizzaNow™ </h1>
+            <img src="pizzanowicon.png" id="icon" alt="icon">
+
+        </header>
+        
+		<main>
+            <h2>START YOUR ORDER </h2>
+             <!-- identify as form and check validy when click submit -->
+            <form id  = "myPizza" onsubmit="submitForm()">
+            <fieldset> 
+                <legend> Make your pizza </legend> 
+                
+                <!-- Radio buttons for dominant toppings -->
+                <h3>Dominant Toppings </h3>
+                <input type="radio" name="toppings1" id="toppings1"  /> 
+                <label for="toppings">Bacon </label>
+                <input type="radio" name="toppings1" id="toppings1"  /> 
+                <label for="toppings">Sausage </label>
+                <input type="radio" name="toppings1" id="toppings1"  /> 
+                <label for="toppings">Chicken</label>
+                <input type="radio" name="toppings1" id="toppings1"  /> 
+                <label for="toppings">Beef</label>
+                <input type="radio" name="toppings1" id="toppings1"  /> 
+                <label for="toppings">Shrimp</label>
+                <input type="radio" name="toppings1" id="toppings1"  /> 
+                <label for="toppings">Avocado</label>
+                <input type="radio" name="toppings1" id="toppings1"  /> 
+                <label for="toppings">Tomatoes</label>
+
+                <!-- Checkboxes for additional toppings -->
+                <h3>Additional Toppings </h3>
+                
+                <input type="checkbox" name="toppings2" class="toppings2"  /> 
+                <label for="toppings">Mushrooms</label>
+                <input type="checkbox" name="toppings2" class="toppings2"  /> 
+                <label for="toppings">Onions</label>
+                <input type="checkbox" name="toppings2" class="toppings2"  /> 
+                <label for="toppings">Green peppers</label>
+                <input type="checkbox" name="toppings2" class="toppings2"  /> 
+                <label for="toppings">Pineapple</label>
+                <input type="checkbox" name="toppings2" class="toppings2"  /> 
+                <label for="toppings">Spinach</label>
+                <br><input type="checkbox" name="toppings2" class="toppings2"  /> 
+                <label for="toppings">Extra cheese</label>
+                <input type="checkbox" name="toppings2" class="toppings2"  /> 
+                <label for="toppings">Black olives</label>
+                <input type="checkbox" name="toppings2" class="toppings2"  /> 
+                <label for="toppings">Jalapeños</label>
+                <input type="checkbox" name="toppings2" class="toppings2"  /> 
+                <label for="toppings">Pepperoni</label>
+                <input type="checkbox" name="toppings2" class="toppings2"  /> 
+                <label for="toppings">Sun-dried tomatoes</label>
+                <input type="checkbox" name="toppings2" class="toppings2"  /> 
+                <label for="toppings">Ham</label>
+                <button type="button" onclick="selectAll()">Select All</button>
+                
+                <!-- Button to select all additional toppings -->
+                <script>
+                    function selectAll() {
+                        var checkboxes = document.querySelectorAll('.toppings2');
+                        checkboxes.forEach(function(checkbox) {
+                            checkbox.checked = true;
+                        });
+                    }
+                </script>
+
+
+                <!-- Radio buttons for sauces -->
+                <h3>Sauces </h3>
+                <input type="radio" name="Sauces" id="Sauces"  /> 
+                <label for="Sauces">Tomato Sauce</label>
+                <input type="radio" name="Sauces" id="Sauces"  /> 
+                <label for="Sauces">Barbecue Sauce</label>
+                <input type="radio" name="Sauces" id="Sauces"  /> 
+                <label for="Sauces">Pesto Sauce</label>
+                <input type="radio" name="Sauces" id="Sauces"  /> 
+                <label for="Sauces">Alfredo Sauce</label>
+                <!-- Radio buttons for crust types -->
+                <h3>Crust Types</h3>
+                <input type="radio" name="Crust" id="Crust"  /> 
+                <label for="Crust">Thin Crust</label>
+                <input type="radio" name="Crust" id="Crust"  /> 
+                <label for="Crust">Thick Crust </label>
+                <input type="radio" name="Crust" id="Crust"  /> 
+                <label for="Crust">Stuffed Crust</label>
+                <input type="radio" name="Crust" id="Crust"  /> 
+                <label for="Crust">Cauliflower Crust</label>
+                <!-- Radio buttons for pizza sizes -->
+                <h3>Size </h3>
+                <input type="radio" name="Size" id="Size"  /> 
+                <label for="Size">10 inches ($10) </label>
+                <input type="radio" name="Size" id="Size"  /> 
+                <label for="Size">14 inches ($15) </label>
+                <!-- Dropdown for quantity selection -->
+                <br><br><label for="QTY">How many pizzas you would like to order?* </label>
+                <select id="QTY" name="QTY" required>
+                <option value="">QTY</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                </select>
+                
+                <p> <small>Can't decide? No problem! Let us craft a surprise pizza just for you! Simply fill in the required fields* and <strong>click Order Now !</strong> <br> – we'll handle the rest!</small> </p>
+            </fieldset>
+
+
+                <fieldset>
+                    <!-- Contact information -->
+                    <legend>Contact Information</legend>
+                    <!-- required fields -->
+                    <div>
+                        <label for="First Name">First Name:*</label>
+                        <input id="First Name" type="text" name="First Name"  required size="30" maxlength="50" placeholder="Enter your First Name" />                   
+                         
+                    </div>
+                    <div>
+                        <label for="Last Name">First Name:*</label>
+                        <input id="Last Name" type="text" name="Last Name"  required size="30" maxlength="50" placeholder="Enter your Last Name" />                        
+                         
+                    </div>
+                    <div>
+                        <label for="address">Address Line 1 :*</label>
+                        <input id="address" type="text" name="address" required />
+                    </div>
+
+
+                    <div>
+                        <label for="address">Address Line 2 :</label>
+                        <input id="address" type="text" name="address"  />
+                    </div>
+
+                    <div>
+                        <!-- Dropdown for Province  selection -->
+                        
+                        <label for="province">Province:*</label>
+                        <select id="province" name="province" required>
+                        <option value="">Select a province</option>
+                        <option value="AB">Alberta</option>
+                        <option value="BC">British Columbia</option>
+                        <option value="MB">Manitoba</option>
+                        <option value="NB">New Brunswick</option>
+                        <option value="NL">Newfoundland and Labrador</option>
+                        <option value="NS">Nova Scotia</option>
+                        <option value="ON">Ontario</option>
+                        <option value="PE">Prince Edward Island</option>
+                        <option value="QC">Quebec</option>
+                        <option value="SK">Saskatchewan</option>
+                        <option value="NT">Northwest Territories</option>
+                        <option value="NU">Nunavut</option>
+                        <option value="YT">Yukon</option>
+                        </select>
+                    </div>
+                    <!-- phone format -->
+                    <div>
+                        <label for="phone-number">Phone Number:*</label>
+                        <input type="tel" id="phone-number" name="phone-number" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"  required placeholder="494-234-3486" />
+                    </div>
+                    <!-- Email @ format -->
+                    <div>
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" placeholder="Enter your email" />
+                    </div>
+                    <!-- date selection-->
+                    <div>
+                        <label for="date">Delivery date:*</label>
+                        <input type="date" id="datepicker" name="datepicker"required  >
+                    </div>
+                    <!-- time selection-->
+                    <div>
+                    <label for="timepicker">Select a Time:</label>
+                    <input type="time" id="timepicker" name="timepicker">
+                    </div>
+
+                </fieldset>
+
+                <fieldset>
+                    <legend>Membership information</legend>
+                    <div>
+                        <label for="username">Username:</label>
+                        <input type="username" id="username" name="username" placeholder="Enter your username" />
+                    </div>    
+                    <!-- password format -->
+                    <div>
+                        <label for="password">Password:</label>
+                        <input type="password" id="password" name="password" placeholder="Enter your password" />
+                    </div>     
+                    <!-- upload image -->               
+                    <div>
+                        <label for="coupon">Valid Coupon:</label>
+                        <input type="file" id="coupon" name="coupon"  />
+
+                    </div>
+                    
+                </fieldset>
+
+                <fieldset> 
+                    <!-- Payment selection -->
+                    <legend>Payment:*</legend> 
+                        
+                    <input type="radio" name="payment" id="payment" value="payment" required /> 
+                    <label for="payment">Credit card</label>
+                    <img src="creditcard.png" id="creditcard" alt="creditcard">
+                    
+                    <input type="radio" name="payment" id="payment" value="payment" required /> 
+                    <label for="payment">E-transfer</label>
+                    <img src="interac.png" id="interac" alt="interac">
+
+                    <input type="radio" name="payment" id="payment" value="payment" required /> 
+                    <label for="payment">Cash</label>
+                        
+                    
+                </fieldset>
+                
+                <!-- reset button and submit button-->
+                <br><input type="reset" value="Reset" />
+                <input type="submit" value="Order Now !"   />
+                
+                
+            </form>
+
+
+        
+            <script>
+                function submitForm() {
+                    var form = document.getElementById('myPizza');
+                    
+                    // Check form validity
+                    if (form.checkValidity()) {
+                        // Show pop-up message
+                        alert('Your order form received,please check your email / sms. Pizza on the way, ENJOY !');
+                    } else {
+                        // If form is not valid, display pop-up message
+                        alert('Please fill in all required fields correctly.');
+                    }
+                }
+            </script>
+
+        </main>
+        <footer>
+            <p><small>PizzaNow™ Inc. All rights reserved</small></p>
+        </footer>
+	</body>
+</html>
+
